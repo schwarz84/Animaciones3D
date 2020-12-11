@@ -1,0 +1,66 @@
+div {
+   font-family: 'Arial';
+   background-color: #11ab1c;
+   margin: 100px 100px;
+   padding: 5px 40px;
+   text-align: center;
+   font-weight: bolder;
+   width: 80px;
+   display: inline-block;
+   vertical-align: middle;
+}
+/*  Perespective es el punto de vista por el cual el obvservador observa jajajaja solo acepta numeros > 0*/
+.giroX {
+   -webkit-animation: 1.3s giroX 3;
+}
+@-webkit-keyframes giroX {
+   0% {
+      -webkit-transform: perspective(200px) rotateX(90deg);
+   }
+   40% {
+      -webkit-transform: perspective(200px) rotateX(-20deg);
+   }
+   60% {
+      -webkit-transform: perspective(200px) rotateX(20deg);
+   }
+}
+
+.giroY {
+   -webkit-animation: 1.3s giroY 3;
+}
+@-webkit-keyframes giroY {
+   0% {
+      -webkit-transform: perspective(200px) rotateY(90deg);
+   }
+   40% {
+      -webkit-transform: perspective(200px) rotateY(-20deg);
+   }
+   60% {
+      -webkit-transform: perspective(200px) rotateY(20deg);
+   }
+}
+
+.practica {
+   -webkit-animation: 1.3s rota 3;
+}
+@-webkit-keyframes rota {
+   0% {
+      -webkit-transform: perspective(250px) rotateX(90deg) rotateY(90deg);
+   }
+   40% {
+      -webkit-transform: perspective(250px) rotateX(-20deg) rotateY(-20deg);
+   }
+   60% {
+      -webkit-transform: perspective(250px) rotateX(20deg) rotateY(20deg);
+   }
+}
+
+.giroOut {
+   -webkit-animation: 2s giroOut 3;
+}
+@-webkit-keyframes giroOut {
+   100% {
+      opacity: 0.3;
+      -webkit-transform: perspective(200px) rotateY(90deg);
+   }
+}

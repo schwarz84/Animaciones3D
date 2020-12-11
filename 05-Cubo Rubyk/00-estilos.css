@@ -1,0 +1,154 @@
+.contenedor {
+   perspective: 1000px;
+   perspective-origin: 50% 50%;
+}
+
+.cubo {
+   -webkit-transform-style: preserve-3d;
+   -webkit-transform: rotateY(-30deg);
+   margin: 200px auto;
+}
+
+.cubo, .cubo > div {
+   height: 300px;
+   width: 300px;
+}
+
+.cara {
+   position: absolute;
+   border: 5px solid black;
+   opacity: 1;
+}
+/* Tamaño de los cuadros pequeños */
+.partes {
+   width: 97px;
+   height: 97px;
+   border: 2px solid black;
+}
+/* Posicion de los cuadros */
+.partes:nth-child(4) {
+   position:absolute;
+   top: 0.3px;
+   left: 100px;
+}
+.partes:nth-child(5) {
+   position:absolute;
+   top: 100.6px;
+   left: 100px;
+}
+.partes:nth-child(6) {
+   position:absolute;
+   top: 202px;
+   left: 100px;
+}
+.partes:nth-child(7) {
+   position:absolute;
+   top: 0.3px;
+   left: 200px;
+}
+.partes:nth-child(8) {
+   position:absolute;
+   top: 100.6px;
+   left: 200px;
+}
+.partes:nth-child(9) {
+   position:absolute;
+   top: 202px;
+   left: 200px;
+}
+/* Coloreo y Acomodo las caras */
+.cubo .cara:nth-child(1) {
+   background: #e80c0c;
+   -webkit-transform: translateZ(155px);
+}
+.cubo .cara:nth-child(2) {
+   background: #ec7405;
+   -webkit-transform: translateZ(-155px);
+}
+.cubo .cara:nth-child(3) {
+   background: #08bd10;
+   -webkit-transform: translateX(155px) rotateY(90deg);
+}
+.cubo .cara:nth-child(4) {
+   background: #1d00d0;
+   -webkit-transform: translateX(-155px) rotateY(90deg) ;
+}
+.cubo .cara:nth-child(5) {
+   background: yellow;
+   -webkit-transform: translateY(155px) rotateX(90deg);
+}
+.cubo .cara:nth-child(6) {
+   background: white;
+   -webkit-transform: translateY(-155px) rotateX(90deg);
+}
+/* Pinto las partes pequeñas para que parezca desordenado */
+.cara:nth-child(2) > .partes:nth-child(2),
+.cara:nth-child(2) > .partes:nth-child(9),
+.cara:nth-child(3) > .partes:nth-child(7),
+.cara:nth-child(4) > .partes:nth-child(6),
+.cara:nth-child(4) > .partes:nth-child(9),
+.cara:nth-child(4) > .partes:nth-child(4) {
+   background: #e80c0c ;
+}
+.cara:nth-child(1) > .partes:nth-child(7),
+.cara:nth-child(5) > .partes:nth-child(3),
+.cara:nth-child(5) > .partes:nth-child(8),
+.cara:nth-child(5) > .partes:nth-child(9),
+.cara:nth-child(6) > .partes:nth-child(1),
+.cara:nth-child(6) > .partes:nth-child(9) {
+   background: #ec7405;
+}
+.cara:nth-child(1) > .partes:nth-child(2),
+.cara:nth-child(1) > .partes:nth-child(8),
+.cara:nth-child(2) > .partes:nth-child(3),
+.cara:nth-child(4) > .partes:nth-child(2),
+.cara:nth-child(5) > .partes:nth-child(2),
+.cara:nth-child(5) > .partes:nth-child(4),
+.cara:nth-child(6) > .partes:nth-child(7),
+.cara:nth-child(6) > .partes:nth-child(8) {
+   background: #08bd10;
+}
+.cara:nth-child(1) > .partes:nth-child(6),
+.cara:nth-child(3) > .partes:nth-child(2),
+.cara:nth-child(3) > .partes:nth-child(6),
+.cara:nth-child(3) > .partes:nth-child(9),
+.cara:nth-child(5) > .partes:nth-child(1),
+.cara:nth-child(6) > .partes:nth-child(2),
+.cara:nth-child(6) > .partes:nth-child(4) {
+   background: #1d00d0;
+}
+.cara:nth-child(1) > .partes:nth-child(9),
+.cara:nth-child(2) > .partes:nth-child(4),
+.cara:nth-child(2) > .partes:nth-child(6),
+.cara:nth-child(3) > .partes:nth-child(1),
+.cara:nth-child(4) > .partes:nth-child(1),
+.cara:nth-child(6) > .partes:nth-child(3),
+.cara:nth-child(6) > .partes:nth-child(6) {
+   background: yellow;
+}
+.cara:nth-child(1) > .partes:nth-child(3),
+.cara:nth-child(2) > .partes:nth-child(7),
+.cara:nth-child(3) > .partes:nth-child(3),
+.cara:nth-child(3) > .partes:nth-child(4),
+.cara:nth-child(3) > .partes:nth-child(8),
+.cara:nth-child(4) > .partes:nth-child(7),
+.cara:nth-child(4) > .partes:nth-child(8),
+.cara:nth-child(5) > .partes:nth-child(6) {
+   background: white;
+}
+/* Animo con Rotacion */
+.cubo {
+   -webkit-animation: 20s giro infinite;
+}
+@-webkit-keyframes giro {
+   0% {
+      -webkit-transform: rotateX(-45deg)
+                         rotateY(0deg);
+   }
+   50% {
+      -webkit-transform: rotateX(45deg) rotateY(360deg);
+   }
+   0% {
+      -webkit-transform: rotateX(-45deg) rotateY(720deg);
+   }
+}

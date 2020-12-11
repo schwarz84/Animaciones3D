@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+   <link rel="stylesheet" href="./../../../02-CSS3/normalize.css">
+   <script src="./../../../02-CSS3/modernizr-custom.js" charset="utf-8"></script>
+   <link rel="stylesheet" href="00-estilos.css">
+   <meta charset="utf-8">
+   <title>Reloj Rueda 3D</title>
+</head>
+
+<body>
+   <div id="content">
+      <!-- Ruedas de horas -->
+      <div id="horas1" class="rueda"></div>
+      <div id="horas2" class="rueda"></div>
+      <!-- Ruedas de minutos -->
+      <div id="minutos1" class="rueda"></div>
+      <div id="minutos2" class="rueda"></div>
+      <!-- Ruedas de segundos -->
+      <div id="segundos1" class="rueda"></div>
+      <div id="segundos2" class="rueda"></div>
+
+   </div>
+   <script>
+      // Funcion para llenar las ruedas con las horas que corresponda
+      function llenarRueda(rueda, inicio, limite) {
+         var ruedaReloj = document.getElementById(rueda);
+
+         cadena = "";
+
+         for ( i = inicio; i < 10; i++) {
+            cadena = cadena + "<div class='card c" + i + "'>";
+            if (i <= limite) {
+               cadena = cadena + i;
+            }
+            cadena = cadena + "</div>";
+         }
+
+         for ( i = 0; i < inicio; i++) {
+            cadena = cadena + "<div class='card c" + i + "'>";
+            if (i <= limite) {
+               cadena = cadena + i;
+            }
+            cadena = cadena + "</div>";
+         }
+
+         ruedaReloj.innerHTML = cadena;
+      }
+      // variable que da la hora exacta
+      var tiempo = new <Date></Date>();
+      // Llenar la decena de las horas
+      var horas1 = tiempo.getHours();
+      while (horas1 % 10 != 0) {
+         horas1--;
+      }
+      horas1 = horas1 / 10;
+      llenarRueda ("horas1", horas1, 2);
+
+      // Llenar la unidad de las horas
+      var horas2 = tiempo.getHours();
+      horas2 = horas2 - (horas1 * 10);
+      llenarRueda("horas2", horas2, 9);
+
+      // Llenar la decena de minutos
+      var minutos1 = tiempo.getMinutes();
+      while (minutos1 % 10 != 0) {
+         minutos1--;
+      }
+      minutos1 = minutos1 / 10;
+      llenarRueda("minutos1", minutos1, 5);
+      // LLenar la unidad de minutos
+      var minutos2 = tiempo.getMinutes();
+      minutos2 = minutos2 - (minutos1 * 10);
+      llenarRueda("minutos2", minutos2, 9);
+
+      // Llenar la decena de segundos
+     var segundos1 = tiempo.getSeconds();
+     while (segundos1 % 10 != 0) {
+        segundos1--;
+     }
+     segundos1 = segundos1 / 10;
+     llenarRueda("segundos1", segundos1, 5);
+     // LLenar la unidad de segundos
+     var segundos2 = tiempo.getSeconds();
+     segundos2 = segundos2 - (segundos1 * 10);
+     llenarRueda("segundos2", segundos2, 9);
+
+   </script>
+</body>
+
+</html>

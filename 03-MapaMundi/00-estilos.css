@@ -1,0 +1,19 @@
+.content {
+   width: 398.5px;
+   height: 399px;
+   margin: 100px;
+   background: url("./Mundo.png");
+   border-radius: 50%;
+   -webkit-transform: rotate(-15deg);
+   -webkit-animation: 25s rotacion infinite linear;
+   box-shadow: inset 150px 10px 799px rgba(4, 4, 4, 0.84);
+}
+
+@-webkit-keyframes rotacion {
+   0% {
+      background-position: 0px 0px;
+   }
+   100% {
+      background-position: -799px 0px;
+   }
+}

@@ -1,0 +1,13 @@
+p {
+   font-size: 45px;
+   color: #e00aa3;
+   /* text-shadow: -5px 2px 0px black; */
+}
+
+p.texto3D {
+   color: #e62e1c;
+   text-shadow:   -1px 1px 0px #54110b,
+                  -2px 2px 0px #54110b,
+                  -3px 3px 0px #54110b,
+                  -4px 4px 0px #54110b;
+}
